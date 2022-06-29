@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  position: relative;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgba(50, 127, 168, 1);
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 24px;
+  }
+}

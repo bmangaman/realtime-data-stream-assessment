@@ -1,14 +1,35 @@
 .articles {
+  padding: 12px 0;
+
   .article {
-    background: rgba(0, 0, 0, 0.1);
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: nowrap;
     padding: 12px;
 
     & + .article {
       margin-top: 12px;
     }
 
-    h2 {
-      margin: 0 0 8px 0;
+
+    &__rank {
+      margin: 0 24px 0 12px;
+    }
+    
+    &__links {
+      flex: 1;
+
+      h2 {
+        margin: 0 0 8px 0;
+
+        fa-icon {
+          font-size: 0.75rem;
+          margin-left: 2px;
+        }
+      }
     }
   }
 }
