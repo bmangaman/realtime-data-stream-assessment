@@ -30,6 +30,14 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('realtime-data-stream-assessment app is running!');
+    expect(compiled.querySelector('h2')?.textContent).toContain('Hacker News');
   });
+
+  /**
+   * Would add unit tests around:
+   *  - make sure all varibles exist and have correct values
+   *  - making sure the inputs work
+   *  - making sure all of the static text exists
+   *  - make sure all the functions (filterArticles, selectArticles) work as expected
+   */
 });

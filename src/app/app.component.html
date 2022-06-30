@@ -1,11 +1,32 @@
-<div class="wrapper content">
+<div class="content">
   <header>
-    <h1>Hacker News - Top 30</h1>
+    <div class="wrapper">
+      <h1>Hacker News - Top 30</h1>
+      <form *ngIf="fitlerForm" class="search" [formGroup]="fitlerForm">
+        <label>
+          <input type="text" formControlName="search" placeholder="Filter Results">
+        </label>
+        <br />
+        <select formControlName="timestamp">
+          <option [ngValue]="null">Most Recent</option>
+          <option *ngFor="let t of timestamps.value" [ngValue]="t.uuid">{{ t.timestamp | date : 'medium' }}</option>
+        </select>
+      </form>
+    </div>
   </header>
   <main>
-    <articles [articles]="articles"></articles>
+    <div class="wrapper">
+      <ng-template [ngIf]="!filteredArticles.length">
+        <div *ngIf="firstLoad; else noResults" class="loading"><div class="dot"></div></div>
+        <ng-template #noResults><div class="no-results">No Results</div></ng-template>
+      </ng-template>
+      <articles *ngIf="filteredArticles.length" [articles]="filteredArticles"></articles>
+    </div>
   </main>
   <footer>
-    Footer
+    <div class="wrapper">
+      <div class="last-updated">Last Updated: {{ currentTimestamp.value ? (currentTimestamp.value | date : 'medium') : '-' }}</div>
+      <div class="num-results">Viewing {{ filteredArticles.length }} (of {{ currentArticles.value.length }})</div>
+    </div>
   </footer>
 </div>

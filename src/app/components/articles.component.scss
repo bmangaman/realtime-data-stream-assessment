@@ -3,7 +3,7 @@
 
   .article {
     align-items: center;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     display: flex;
@@ -23,6 +23,7 @@
       flex: 1;
 
       h2 {
+        display: inline-block;
         margin: 0 0 8px 0;
 
         fa-icon {
